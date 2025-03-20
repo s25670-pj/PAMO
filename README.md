@@ -1,0 +1,2 @@
+# PAMO
+### Autor: Mateusz Lech
