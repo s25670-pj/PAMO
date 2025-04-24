@@ -19,8 +19,6 @@ public class CaloriesActivity extends AppCompatActivity {
     private EditText editTextHeight;
     private EditText editTextAge;
     private RadioGroup radioGroupGender;
-    private RadioButton radioButtonMale;
-    private RadioButton radioButtonFemale;
     private RadioGroup radioGroupActivity;
     private RadioButton radioButtonSedentary;
     private RadioButton radioButtonLightlyActive;
@@ -38,8 +36,6 @@ public class CaloriesActivity extends AppCompatActivity {
         editTextHeight = findViewById(R.id.editTextHeight);
         editTextAge = findViewById(R.id.editTextAge);
         radioGroupGender = findViewById(R.id.radioGroupGender);
-        radioButtonMale = findViewById(R.id.radioButtonMale);
-        radioButtonFemale = findViewById(R.id.radioButtonFemale);
         radioGroupActivity = findViewById(R.id.radioGroupActivity);
         radioButtonSedentary = findViewById(R.id.radioButtonSedentary);
         radioButtonLightlyActive = findViewById(R.id.radioButtonLightlyActive);
@@ -88,7 +84,7 @@ public class CaloriesActivity extends AppCompatActivity {
 
             // Obliczanie BMR (Basal Metabolic Rate) za pomocą wzoru Harrisa-Benedicta
             float bmr;
-            if (radioButtonMale.isChecked()) {
+            if (radioGroupGender.getCheckedRadioButtonId() == R.id.radioButtonMale) {
                 bmr = (float) (66.5 + (13.75 * weight) + (5.003 * height) - (6.75 * age));
             } else {
                 bmr = (float) (655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * age));

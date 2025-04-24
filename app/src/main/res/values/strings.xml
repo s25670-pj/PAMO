@@ -2,6 +2,9 @@
 <resources>
     <string name="app_name">Kalkulator BMI</string>
 
+    <string name="bmi_result">Twoje BMI: %1$s</string>
+    <string name="status_result">Status: %1$s</string>
+
     <!-- Poziomy aktywności dla ekranu obliczania kalorii -->
     <string-array name="activity_levels">
         <item>Siedzący tryb życia (brak ćwiczeń)</item>

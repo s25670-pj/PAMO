@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
             String status = getBMIStatus(bmi);
 
-            textViewResult.setText("Twoje BMI: " + bmiResult);
-            textViewStatus.setText("Status: " + status);
+            textViewResult.setText(getString(R.string.bmi_result, bmiResult));
+            textViewStatus.setText(getString(R.string.status_result, status));
 
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Nieprawidłowy format liczby", Toast.LENGTH_SHORT).show();
