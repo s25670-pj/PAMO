@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".BMIChartActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wykres zmian BMI w czasie"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/bmiChart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvChartInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wykres przedstawia zmiany BMI w ostatnich 6 miesiącach."
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Niedowaga:"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:background="#64B5F6"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Optimum:"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:background="#81C784"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nadwaga:"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:background="#FFB74D"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Otyłość:"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:background="#E57373" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBackToMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wróć do menu" />
+
+</LinearLayout>

@@ -1,9 +1,11 @@
 package com.example.kalkulatorbmi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,11 +21,14 @@ public class RecipesActivity extends AppCompatActivity {
     private TextView textViewRecipeIngredients;
     private TextView textViewRecipeInstructions;
     private TextView textViewRecipeCalories;
+    private Button btnShowShoppingList;
 
     private List<String> recipeNames = new ArrayList<>();
     private List<String> recipeIngredients = new ArrayList<>();
     private List<String> recipeInstructions = new ArrayList<>();
     private List<String> recipeCalories = new ArrayList<>();
+
+    private int currentRecipePosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,7 @@ public class RecipesActivity extends AppCompatActivity {
         textViewRecipeIngredients = findViewById(R.id.textViewRecipeIngredients);
         textViewRecipeInstructions = findViewById(R.id.textViewRecipeInstructions);
         textViewRecipeCalories = findViewById(R.id.textViewRecipeCalories);
+        btnShowShoppingList = findViewById(R.id.btnShowShoppingList);
 
         addRecipes();
 
@@ -44,7 +50,17 @@ public class RecipesActivity extends AppCompatActivity {
         listViewRecipes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                currentRecipePosition = position;
                 displayRecipe(position);
+            }
+        });
+
+        btnShowShoppingList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecipesActivity.this, ShoppingListActivity.class);
+                intent.putExtra("RECIPE_NAME", recipeNames.get(currentRecipePosition));
+                startActivity(intent);
             }
         });
 
